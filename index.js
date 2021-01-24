@@ -1,17 +1,28 @@
+if (process.env.NODE_ENV !== 'production') {
+    require('dotenv').config();
+}
+
+const path = require('path');
+
 const express = require('express');
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+const compression = require('compression');
+
 
 const app = express();
-const mongoose = require('mongoose');
-const port = 3000;
+app.use(compression());
 
 const dolarRoutes = require('./routes/dolarRoutes');
 
 // parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({extended: false}));
 
 // parse application/json
 app.use(bodyParser.json());
+
+// Static serve files
+app.use(express.static(path.join(__dirname, 'dist')));
 
 // CORS
 app.use((req, res, next) => {
@@ -27,6 +38,11 @@ app.use((req, res, next) => {
 // Routes
 app.use('/dolar', dolarRoutes);
 
+// Static files
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+});
+
 // Error handling
 app.use((error, req, res, next) => {
     console.log(error);
@@ -38,12 +54,11 @@ app.use((error, req, res, next) => {
 
 
 mongoose
-    .connect(
-        'mongodb+srv://admin:adminpassword@dolarahora.m34mb.mongodb.net/dolar?retryWrites=true&w=majority'
-    )
+    .connect(process.env.MONGO_URI)
     .then(() => {
-        app.listen(port, () => {
-            console.log(`Example app listening at http://localhost:${port}`)
+        app.listen(process.env.PORT || 3000, () => {
+            console.log(`MONGO_URI: ${process.env.MONGO_URI}`);
+            console.log(`Example app listening at port:${process.env.PORT}`)
         });
     })
     .catch(err => console.log(err));
