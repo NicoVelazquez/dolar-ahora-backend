@@ -3,8 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="a66d9b32-5e79-4007-8345-9cfc1068a0cb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/dolarController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/dolarController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/dolar.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/dolar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/3rdpartylicenses.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/FrederickatheGreat-Regular.aa6c877c94f34038a6c9.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/main.4e6a686040367f6c8a27.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/polyfills.d15628b9ba7248669cd9.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/runtime.7b63b9fd40098a2e8207.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/scripts.132aae82da4321a174b5.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/styles.ba5d86507601661fef55.css" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -99,7 +106,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1611260904914</updated>
-      <workItem from="1611260906472" duration="15891000" />
+      <workItem from="1611260906472" duration="16527000" />
     </task>
     <servers />
   </component>
