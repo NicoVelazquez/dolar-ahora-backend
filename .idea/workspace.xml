@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="a66d9b32-5e79-4007-8345-9cfc1068a0cb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/dolarController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/dolarController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/dolar.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/dolar.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -97,7 +99,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1611260904914</updated>
-      <workItem from="1611260906472" duration="15300000" />
+      <workItem from="1611260906472" duration="15891000" />
     </task>
     <servers />
   </component>

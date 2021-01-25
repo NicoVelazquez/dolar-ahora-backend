@@ -14,6 +14,10 @@ const dolarSchema = new Schema(
         sell: {
             type: String,
             required: true
+        },
+        source: {
+            type: String,
+            required: true
         }
     }
 );

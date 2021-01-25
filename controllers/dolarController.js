@@ -18,12 +18,12 @@ exports.update = async (req, res, next) => {
         for(let dolar of dolars){
             console.log(dolar);
             const name = dolar.name;
-            const editDolar = await Dolar.findOne({name: name});
+            const source = dolar.source;
+            const editDolar = await Dolar.findOne({name: name, source: source});
             if (!editDolar) {
                 console.log('No encontro dolar name.');
                 throw new Error('No dollar found to edit.');
             }
-            editDolar.name = dolar.name;
             editDolar.buy = dolar.buy || 0;
             editDolar.sell = dolar.sell || 0;
             editDolar.save()
