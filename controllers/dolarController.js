@@ -13,6 +13,7 @@ exports.getAll = async (req, res) => {
 
 exports.update = async (req, res, next) => {
     const dolars = req.body;
+    const now = new Date();
 
     try{
         for(let dolar of dolars){
@@ -26,6 +27,7 @@ exports.update = async (req, res, next) => {
             }
             editDolar.buy = dolar.buy || 0;
             editDolar.sell = dolar.sell || 0;
+            editDolar.date = now;
             editDolar.save()
                 .then()
                 .catch(err => {

@@ -18,6 +18,10 @@ const dolarSchema = new Schema(
         source: {
             type: String,
             required: true
+        },
+        date: {
+            type: Date,
+            required: true
         }
     }
 );
