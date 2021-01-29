@@ -13,7 +13,8 @@ const compression = require('compression');
 const app = express();
 app.use(compression());
 
-const dolarRoutes = require('./routes/dolarRoutes');
+const dollarRoutes = require('./routes/dolarRoutes');
+const newsRoutes = require('./routes/newsRoutes');
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({extended: false}));
@@ -36,15 +37,16 @@ app.use((req, res, next) => {
 });
 
 // Routes
-app.use('/dolar', dolarRoutes);
+app.use('/dollar', dollarRoutes);
+app.use('/news', newsRoutes);
 
 // Static files
-app.get('*', (req, res) => {
+app.use('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
 // Error handling
-app.use((error, req, res, next) => {
+app.use((error, req, res) => {
     console.log(error);
     const status = error.statusCode || 500;
     const message = error.message;
