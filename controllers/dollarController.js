@@ -1,4 +1,4 @@
-const Dolar = require('../models/dolar');
+const Dolar = require('../models/dollar');
 
 exports.getAll = async (req, res) => {
     Dolar.find()
@@ -17,7 +17,6 @@ exports.update = async (req, res, next) => {
 
     try{
         for(let dolar of dolars){
-            console.log(dolar);
             const name = dolar.name;
             const source = dolar.source;
             const editDolar = await Dolar.findOne({name: name, source: source});

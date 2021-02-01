@@ -1,6 +1,6 @@
 const express = require('express');
 
-const dolarController = require('../controllers/dolarController');
+const dolarController = require('../controllers/dollarController');
 
 const router = express.Router();
 

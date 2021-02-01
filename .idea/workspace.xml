@@ -3,18 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="a66d9b32-5e79-4007-8345-9cfc1068a0cb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/3rdpartylicenses.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/FrederickatheGreat-Regular.aa6c877c94f34038a6c9.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/assets/FrederickatheGreat-Regular.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/assets/franklin.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main.f2d3c6ba3a992e62e3a5.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/polyfills.d15628b9ba7248669cd9.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/runtime.7b63b9fd40098a2e8207.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/scripts.132aae82da4321a174b5.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/styles.ba5d86507601661fef55.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/dolarController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/dollarController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/dolar.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/dollar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/dolarRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/dollarRoutes.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -113,7 +105,7 @@
       <option name="presentableId" value="Default" />
       <updated>1611260904914</updated>
       <workItem from="1611260906472" duration="17646000" />
-      <workItem from="1611856724914" duration="6975000" />
+      <workItem from="1611856724914" duration="7741000" />
     </task>
     <servers />
   </component>

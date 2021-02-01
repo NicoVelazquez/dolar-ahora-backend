@@ -13,7 +13,7 @@ const compression = require('compression');
 const app = express();
 app.use(compression());
 
-const dollarRoutes = require('./routes/dolarRoutes');
+const dollarRoutes = require('./routes/dollarRoutes');
 const newsRoutes = require('./routes/newsRoutes');
 
 // parse application/x-www-form-urlencoded
