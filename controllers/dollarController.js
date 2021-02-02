@@ -37,6 +37,7 @@ exports.update = async (req, res, next) => {
                     next(err);
                 });
         }
+        console.log("Update successful");
         res.status(200).json('Update successful.')
     } catch (e) {
         console.log('[Error] - Error updating dollar');
