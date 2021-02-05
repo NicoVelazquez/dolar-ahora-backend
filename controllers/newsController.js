@@ -3,7 +3,7 @@ const PoliticNews = require('../models/politicsNews');
 
 
 exports.getTopEconomy = async (req, res) => {
-    EconomyNews.find().limit(3)
+    EconomyNews.find().sort({date: -1}).limit(3)
         .then(news => res.status(200).json(news))
         .catch(err => {
             if (!err.statusCode) {
@@ -14,7 +14,7 @@ exports.getTopEconomy = async (req, res) => {
 };
 
 exports.getTopPolitic = async (req, res) => {
-    PoliticNews.find().limit(3)
+    PoliticNews.find().sort({date: -1}).limit(3)
         .then(news => res.status(200).json(news))
         .catch(err => {
             if (!err.statusCode) {
@@ -25,16 +25,21 @@ exports.getTopPolitic = async (req, res) => {
 };
 
 exports.addEconomy = async (req, res, next) => {
-    const newsArray = req.body;
+    let newsArray = req.body;
     let lastNewsIndex;
 
+
     try {
-        const lastNews = await EconomyNews.findOne();
-        lastNews ? lastNewsIndex = newsArray.findIndex(e => e.name === lastNews.name) : lastNewsIndex = -1;
+        const lastNews = await EconomyNews.findOne().sort({date: -1});
+        lastNews ? lastNewsIndex = newsArray.findIndex(e => e.title === lastNews.title) : lastNewsIndex = -1;
         lastNewsIndex >= 0 ? newsArray.length = lastNewsIndex : null;
+
         if (newsArray.length === 0) {
+            console.log('Post successful, no new economy news.');
             return res.status(200).json('Post successful, no new economy news.')
         }
+
+        newsArray = newsArray.reverse();
 
         EconomyNews.insertMany(newsArray)
             .then(() => res.status(200).json('Post successful (economy).'))
@@ -52,16 +57,20 @@ exports.addEconomy = async (req, res, next) => {
 };
 
 exports.addPolitic = async (req, res, next) => {
-    const newsArray = req.body;
+    let newsArray = req.body;
     let lastNewsIndex;
 
     try {
-        const lastNews = await PoliticNews.findOne();
-        lastNews ? lastNewsIndex = newsArray.findIndex(e => e.name === lastNews.name) : lastNewsIndex = -1;
+        const lastNews = await PoliticNews.findOne().sort({date: -1});
+        lastNews ? lastNewsIndex = newsArray.findIndex(e => e.title === lastNews.title) : lastNewsIndex = -1;
         lastNewsIndex >= 0 ? newsArray.length = lastNewsIndex : null;
+
         if (newsArray.length === 0) {
+            console.log('Post successful, no new politic news.');
             return res.status(200).json('Post successful, no new politic news.')
         }
+
+        newsArray = newsArray.reverse();
 
         PoliticNews.insertMany(newsArray)
             .then(() => res.status(200).json('Post successful (Politic).'))
