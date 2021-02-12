@@ -86,3 +86,25 @@ exports.addPolitic = async (req, res, next) => {
         res.status(500).json('Error posting politic news.');
     }
 };
+
+exports.getPolitic = async (req, res) => {
+    PoliticNews.find().sort({date: -1}).limit(10)
+        .then(news => res.status(200).json(news))
+        .catch(err => {
+            if (!err.statusCode) {
+                err.statusCode = 500;
+            }
+            next(err);
+        })
+};
+
+exports.getEconomy = async (req, res) => {
+    EconomyNews.find().sort({date: -1}).limit(10)
+        .then(news => res.status(200).json(news))
+        .catch(err => {
+            if (!err.statusCode) {
+                err.statusCode = 500;
+            }
+            next(err);
+        })
+};
