@@ -10,7 +10,7 @@
       <change beforePath="$PROJECT_DIR$/dist/assets/franklin.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/favicon.ico" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main.ba376e1177d393d71e08.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/main.55ef0f715c0c53b317cc.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/polyfills.d15628b9ba7248669cd9.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/runtime.7b63b9fd40098a2e8207.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/scripts.132aae82da4321a174b5.js" beforeDir="false" />
@@ -56,13 +56,13 @@
     <property name="restartRequiresConfirmation" value="false" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/models" />
       <recent name="$PROJECT_DIR$/routes" />
       <recent name="$PROJECT_DIR$/controllers" />
-      <recent name="$PROJECT_DIR$" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
@@ -115,7 +115,7 @@
       <updated>1611260904914</updated>
       <workItem from="1611260906472" duration="17646000" />
       <workItem from="1611856724914" duration="12748000" />
-      <workItem from="1613086674993" duration="1048000" />
+      <workItem from="1613086674993" duration="4309000" />
     </task>
     <servers />
   </component>

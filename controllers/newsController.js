@@ -2,8 +2,10 @@ const EconomyNews = require('../models/economyNews');
 const PoliticNews = require('../models/politicsNews');
 
 
-exports.getTopEconomy = async (req, res) => {
-    EconomyNews.find().sort({date: -1}).limit(3)
+exports.getEconomyNews = async (req, res, next) => {
+    const results = +req.params.results || 3;
+
+    EconomyNews.find().sort({date: -1}).limit(results)
         .then(news => res.status(200).json(news))
         .catch(err => {
             if (!err.statusCode) {
@@ -13,8 +15,10 @@ exports.getTopEconomy = async (req, res) => {
         })
 };
 
-exports.getTopPolitic = async (req, res) => {
-    PoliticNews.find().sort({date: -1}).limit(3)
+exports.getPoliticNews = async (req, res, next) => {
+    const results = +req.params.results || 3;
+
+    PoliticNews.find().sort({date: -1}).limit(results)
         .then(news => res.status(200).json(news))
         .catch(err => {
             if (!err.statusCode) {
@@ -87,24 +91,56 @@ exports.addPolitic = async (req, res, next) => {
     }
 };
 
-exports.getPolitic = async (req, res) => {
-    PoliticNews.find().sort({date: -1}).limit(10)
-        .then(news => res.status(200).json(news))
-        .catch(err => {
-            if (!err.statusCode) {
-                err.statusCode = 500;
-            }
-            next(err);
-        })
+exports.getEconomyPaginated = async (req, res, next) => {
+
+    const resultPerPage = +req.params.numberOfResults;
+    const page = +req.params.page || 1;
+    const topResults = +req.params.topResults || 1;
+
+    try {
+        const foundNews = await EconomyNews.find()
+            .sort({date: -1})
+            .skip((resultPerPage * page) - resultPerPage + topResults)
+            .limit(resultPerPage);
+        const totalNews = await EconomyNews.count() - topResults;
+        const result = {
+            'news': foundNews,
+            'totalNews': totalNews,
+            'currentPage': page,
+            'pages': Math.ceil(totalNews / resultPerPage)
+        };
+        res.status(200).json(result);
+    } catch (err) {
+        if (!err.statusCode) {
+            err.statusCode = 500;
+        }
+        next(err);
+    }
 };
 
-exports.getEconomy = async (req, res) => {
-    EconomyNews.find().sort({date: -1}).limit(10)
-        .then(news => res.status(200).json(news))
-        .catch(err => {
-            if (!err.statusCode) {
-                err.statusCode = 500;
-            }
-            next(err);
-        })
+exports.getPoliticPaginated = async (req, res, next) => {
+
+    const resultPerPage = +req.params.numberOfResults;
+    const page = +req.params.page || 1;
+    const topResults = +req.params.topResults || 1;
+
+    try {
+        const foundNews = await PoliticNews.find()
+            .sort({date: -1})
+            .skip((resultPerPage * page) - resultPerPage + topResults)
+            .limit(resultPerPage);
+        const totalNews = await PoliticNews.count() - topResults;
+        const result = {
+            'news': foundNews,
+            'totalNews': totalNews,
+            'currentPage': page,
+            'pages': Math.ceil(totalNews / resultPerPage)
+        };
+        res.status(200).json(result);
+    } catch (err) {
+        if (!err.statusCode) {
+            err.statusCode = 500;
+        }
+        next(err);
+    }
 };
